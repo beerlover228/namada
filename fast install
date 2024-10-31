@@ -1,0 +1,2 @@
+NAMADA_VERSION=v0.39.0 # or whichever version you wish to download
+docker pull ghcr.io/anoma/namada:namada-$NAMADA_VERSION
