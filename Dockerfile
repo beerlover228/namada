@@ -20,7 +20,7 @@ RUN wget "https://golang.org/dl/go$GO_VER.linux-amd64.tar.gz" && \
 tar -C /usr/local -xzf "go$GO_VER.linux-amd64.tar.gz" && \
 rm "go$GO_VER.linux-amd64.tar.gz" && \
 mkdir -p go/bin && \
-mkdir -p "$BASE_DIR
+mkdir -p "$BASE_DIR"
 
 RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y && \
 source $HOME/.cargo/env
