@@ -23,7 +23,7 @@ mkdir -p go/bin && \
 mkdir -p "$BASE_DIR"
 
 RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y && \
-source $HOME/.cargo/env
+. "$HOME/.cargo/env"
 
 RUN git clone https://github.com/cometbft/cometbft.git && \
 cd cometbft && \
@@ -37,7 +37,7 @@ wget https://github.com/anoma/namada/releases/download/v0.44.1/namada-v0.44.1-Li
 tar -xvf namada-v0.44.1-Linux-x86_64.tar.gz && \
 rm namada-v0.44.1-Linux-x86_64.tar.gz && \
 cd namada-v0.44.1-Linux-x86_64 && \
-sudo mv namad* /usr/local/bin/ && \
+mv namad* /usr/local/bin/ && \
 mkdir -p "$BASE_DIR"
 
 RUN namadac utils join-network --chain-id $CHAIN_ID && \
