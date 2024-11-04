@@ -1,6 +1,6 @@
 FROM ubuntu:latest
 
-RUN apt-get update && apt-get upgrade -y && apt-get install make git-core libssl-dev pkg-config libclang-12-dev build-essential protobuf-compiler
+RUN add-apt-repository universe && add-apt-repository multiverse && apt-get update && apt-get upgrade -y && apt-get install make git-core libssl-dev pkg-config libclang-12-dev build-essential protobuf-compiler
 
 ENV HOME=/app
 
