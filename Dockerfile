@@ -52,6 +52,6 @@ sed -i 's#persistent_peers = ".*"#persistent_peers = "tcp://d6691dc866be3de0be93
 sed -i 's#persistent_peers = ".*"#persistent_peers = "'$PEERS'"#' $HOME/.local/share/namada/housefire-cotton.d3c912fee7462/config.toml
 # wget -O $HOME/.local/share/namada/housefire-cotton.d3c912fee7462/cometbft/config/addrbook.json https://server-4.itrocket.net/testnet/namada/addrbook.json
 
-RUN echo sleep 10000 > entrypoint.sh && chmod +x entrypoint.sh
-
-ENTRYPOINT ["/app/entrypoint.sh"]
+RUN echo '#!/bin/sh' > /app/entrypoint.sh && \
+    echo 'sleep 10000' >> /app/entrypoint.sh && \
+    chmod +x /app/entrypoint.sh
