@@ -1,6 +1,6 @@
 FROM ubuntu:latest
 RUN apt-get update && apt-get install -y software-properties-common
-RUN add-apt-repository universe && add-apt-repository multiverse && apt-get update && apt-get upgrade -y && apt-get -y install make wget git-core libssl-dev pkg-config libclang-18-dev build-essential protobuf-compiler
+RUN add-apt-repository universe && add-apt-repository multiverse && apt-get update && apt-get upgrade -y && apt-get -y install make wget curl jq git-core libssl-dev pkg-config libclang-18-dev build-essential protobuf-compiler
 
 ENV HOME=/app
 
