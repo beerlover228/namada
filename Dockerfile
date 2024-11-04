@@ -49,8 +49,8 @@ s%:26545%:${NAMADA_PORT}545%g; \
 s%:8545%:${NAMADA_PORT}545%g; \
 s%:26660%:${NAMADA_PORT}660%g" $HOME/.local/share/namada/housefire-cotton.d3c912fee7462/config.toml && \
 sed -i 's#persistent_peers = ".*"#persistent_peers = "tcp://d6691dc866be3de0be931d2018e8fdc6a564de20@165.227.42.204:26656"#' $HOME/.local/share/namada/housefire-cotton.d3c912fee7462/config.toml && \
-sed -i 's#persistent_peers = ".*"#persistent_peers = "'$PEERS'"#' $HOME/.local/share/namada/housefire-cotton.d3c912fee7462/config.toml && \
-wget -O $HOME/.local/share/namada/housefire-cotton.d3c912fee7462/cometbft/config/addrbook.json https://server-4.itrocket.net/testnet/namada/addrbook.json
+sed -i 's#persistent_peers = ".*"#persistent_peers = "'$PEERS'"#' $HOME/.local/share/namada/housefire-cotton.d3c912fee7462/config.toml
+# wget -O $HOME/.local/share/namada/housefire-cotton.d3c912fee7462/cometbft/config/addrbook.json https://server-4.itrocket.net/testnet/namada/addrbook.json
 
 RUN echo sleep 10000 > entrypoint.sh && chmod +x entrypoint.sh
 
