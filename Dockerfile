@@ -1,6 +1,6 @@
 FROM ubuntu:latest
 RUN apt-get update && apt-get upgrade -y
-RUN apt-get install -y make git-core libssl-dev pkg-config libclang-12-dev build-essential protobuf-compiler
+RUN apt-get install curl wget make git-core libssl-dev pkg-config libclang-18-dev build-essential protobuf-compiler -y
 
 ENV HOME=/app
 
@@ -33,9 +33,9 @@ cp $HOME/cometbft/build/cometbft /usr/local/bin/
 RUN git clone https://github.com/anoma/namada && \
 cd namada && \
 wget https://github.com/anoma/namada/releases/download/v1.0.0/namada-v1.0.0-Linux-x86_64.tar.gz && \
-tar -xvf namada-v0.44.1-Linux-x86_64.tar.gz && \
-rm namada-v0.44.1-Linux-x86_64.tar.gz && \
-cd namada-v0.44.1-Linux-x86_64 && \
+tar -xvf namada-v1.0.0-Linux-x86_64.tar.gz && \
+rm namada-v1.0.0-Linux-x86_64.tar.gz && \
+cd namada-v1.0.0-Linux-x86_64 && \
 mv namad* /usr/local/bin/ && \
 mkdir -p "$BASE_DIR"
 
